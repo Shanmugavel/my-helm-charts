@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  rest-poc-helm:
+  - apiVersion: v2
+    appVersion: 0.0.1-SNAPSHOT
+    created: "2023-04-17T21:58:20.620107+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 8db10122304a4418ded351ab2e2a33563e5de72a2aa8d775b02e4373640cc9c8
+    name: rest-poc-helm
+    type: application
+    urls:
+    - https://shanmugavel.github.io/my-helm-charts/rest-poc-helm-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-04-17T21:58:20.617077+05:30"
