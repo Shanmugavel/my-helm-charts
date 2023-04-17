@@ -17,7 +17,7 @@
 15. Add our repo to Helm ( e.g., helm repo add shan-helm-repo https://shanmugavel.github.io/my-helm-charts/)  
 16. Searc and verify our chart is available ( e.g., helm search repo shan-helm-repo)  
 
-## Actual command and their outpu can be viewed in Reference.txt file  
+## Actual command and their output can be viewed in Reference.txt file  
 
 ## Reference  
 
