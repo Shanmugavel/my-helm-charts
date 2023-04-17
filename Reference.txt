@@ -1,0 +1,238 @@
+D:\workarea\helm_ws>mkdir public-helm-charts
+
+D:\workarea\helm_ws>cd public-helm-charts
+
+D:\workarea\helm_ws\public-helm-charts>dir
+ Volume in drive D is Data
+ Volume Serial Number is 107D-318C
+
+ Directory of D:\workarea\helm_ws\public-helm-charts
+
+17-04-2023  21:49    <DIR>          .
+17-04-2023  21:49    <DIR>          ..
+               0 File(s)              0 bytes
+               2 Dir(s)  48,943,366,144 bytes free
+
+D:\workarea\helm_ws\public-helm-charts>git clone https://github.com/Shanmugavel/my-helm-charts.git
+Cloning into 'my-helm-charts'...
+warning: You appear to have cloned an empty repository.
+
+D:\workarea\helm_ws\public-helm-charts>cd my-helm-charts
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>mkdir charts
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>cd charts
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts\charts>cd ..
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>dir
+ Volume in drive D is Data
+ Volume Serial Number is 107D-318C
+
+ Directory of D:\workarea\helm_ws\public-helm-charts\my-helm-charts
+
+17-04-2023  21:52    <DIR>          .
+17-04-2023  21:51    <DIR>          ..
+17-04-2023  21:54    <DIR>          charts
+               0 File(s)              0 bytes
+               3 Dir(s)  48,943,284,224 bytes free
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>dir charts
+ Volume in drive D is Data
+ Volume Serial Number is 107D-318C
+
+ Directory of D:\workarea\helm_ws\public-helm-charts\my-helm-charts\charts
+
+17-04-2023  21:54    <DIR>          .
+17-04-2023  21:52    <DIR>          ..
+17-04-2023  21:54    <DIR>          rest-poc-helm
+               0 File(s)              0 bytes
+               3 Dir(s)  48,943,284,224 bytes free
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>helm lint charts\rest-poc-helm
+==> Linting charts\rest-poc-helm
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, 0 chart(s) failed
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>dir
+ Volume in drive D is Data
+ Volume Serial Number is 107D-318C
+
+ Directory of D:\workarea\helm_ws\public-helm-charts\my-helm-charts
+
+17-04-2023  21:52    <DIR>          .
+17-04-2023  21:51    <DIR>          ..
+17-04-2023  21:54    <DIR>          charts
+               0 File(s)              0 bytes
+               3 Dir(s)  48,943,284,224 bytes free
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>echo -e “User-Agent: *\nDisallow: /” > robots.txt
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>dir
+ Volume in drive D is Data
+ Volume Serial Number is 107D-318C
+
+ Directory of D:\workarea\helm_ws\public-helm-charts\my-helm-charts
+
+17-04-2023  21:55    <DIR>          .
+17-04-2023  21:51    <DIR>          ..
+17-04-2023  21:54    <DIR>          charts
+17-04-2023  21:55                34 robots.txt
+               1 File(s)             34 bytes
+               3 Dir(s)  48,943,284,224 bytes free
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>helm package charts\rest-poc-helm
+Successfully packaged chart and saved it to: D:\workarea\helm_ws\public-helm-charts\my-helm-charts\rest-poc-helm-0.1.0.tgz
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>dir
+ Volume in drive D is Data
+ Volume Serial Number is 107D-318C
+
+ Directory of D:\workarea\helm_ws\public-helm-charts\my-helm-charts
+
+17-04-2023  21:56    <DIR>          .
+17-04-2023  21:51    <DIR>          ..
+17-04-2023  21:54    <DIR>          charts
+17-04-2023  21:56             3,531 rest-poc-helm-0.1.0.tgz
+17-04-2023  21:55                34 robots.txt
+               2 File(s)          3,565 bytes
+               3 Dir(s)  48,943,280,128 bytes free
+
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>helm repo index --url https://shanmugavel.github.io/my-helm-charts .
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>dir
+ Volume in drive D is Data
+ Volume Serial Number is 107D-318C
+
+ Directory of D:\workarea\helm_ws\public-helm-charts\my-helm-charts
+
+17-04-2023  21:58    <DIR>          .
+17-04-2023  21:51    <DIR>          ..
+17-04-2023  21:54    <DIR>          charts
+17-04-2023  21:58               457 index.yaml
+17-04-2023  21:56             3,531 rest-poc-helm-0.1.0.tgz
+17-04-2023  21:55                34 robots.txt
+               3 File(s)          4,022 bytes
+               3 Dir(s)  48,943,280,128 bytes free
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        charts/
+        index.yaml
+        rest-poc-helm-0.1.0.tgz
+        robots.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>cat index.yaml
+'cat' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>type index.yaml
+apiVersion: v1
+entries:
+  rest-poc-helm:
+  - apiVersion: v2
+    appVersion: 0.0.1-SNAPSHOT
+    created: "2023-04-17T21:58:20.620107+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 8db10122304a4418ded351ab2e2a33563e5de72a2aa8d775b02e4373640cc9c8
+    name: rest-poc-helm
+    type: application
+    urls:
+    - https://shanmugavel.github.io/my-helm-charts/rest-poc-helm-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-04-17T21:58:20.617077+05:30"
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        charts/
+        index.yaml
+        rest-poc-helm-0.1.0.tgz
+        robots.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>git add .
+warning: in the working copy of 'charts/rest-poc-helm/.helmignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'charts/rest-poc-helm/Chart.yaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'charts/rest-poc-helm/templates/NOTES.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'charts/rest-poc-helm/templates/_helpers.tpl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'charts/rest-poc-helm/templates/deployment.yaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'charts/rest-poc-helm/templates/hpa.yaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'charts/rest-poc-helm/templates/ingress.yaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'charts/rest-poc-helm/templates/service.yaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'charts/rest-poc-helm/templates/serviceaccount.yaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'charts/rest-poc-helm/values.yaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'index.yaml', LF will be replaced by CRLF the next time Git touches it
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   charts/rest-poc-helm/.helmignore
+        new file:   charts/rest-poc-helm/Chart.yaml
+        new file:   charts/rest-poc-helm/templates/NOTES.txt
+        new file:   charts/rest-poc-helm/templates/_helpers.tpl
+        new file:   charts/rest-poc-helm/templates/deployment.yaml
+        new file:   charts/rest-poc-helm/templates/hpa.yaml
+        new file:   charts/rest-poc-helm/templates/ingress.yaml
+        new file:   charts/rest-poc-helm/templates/service.yaml
+        new file:   charts/rest-poc-helm/templates/serviceaccount.yaml
+        new file:   charts/rest-poc-helm/values.yaml
+        new file:   index.yaml
+        new file:   rest-poc-helm-0.1.0.tgz
+        new file:   robots.txt
+
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>git commit -m "Helm chart repo"
+[main (root-commit) cc42ab9] Helm chart repo
+ 13 files changed, 379 insertions(+)
+ create mode 100644 charts/rest-poc-helm/.helmignore
+ create mode 100644 charts/rest-poc-helm/Chart.yaml
+ create mode 100644 charts/rest-poc-helm/templates/NOTES.txt
+ create mode 100644 charts/rest-poc-helm/templates/_helpers.tpl
+ create mode 100644 charts/rest-poc-helm/templates/deployment.yaml
+ create mode 100644 charts/rest-poc-helm/templates/hpa.yaml
+ create mode 100644 charts/rest-poc-helm/templates/ingress.yaml
+ create mode 100644 charts/rest-poc-helm/templates/service.yaml
+ create mode 100644 charts/rest-poc-helm/templates/serviceaccount.yaml
+ create mode 100644 charts/rest-poc-helm/values.yaml
+ create mode 100644 index.yaml
+ create mode 100644 rest-poc-helm-0.1.0.tgz
+ create mode 100644 robots.txt
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>git push
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (18/18), 8.99 KiB | 1.80 MiB/s, done.
+Total 18 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Shanmugavel/my-helm-charts.git
+ * [new branch]      main -> main
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>helm repo add shan-helm-repo https://shanmugavel.github.io/my-helm-charts/
+"shan-helm-repo" has been added to your repositories
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>helm search repo shan-helm-repo
+NAME                            CHART VERSION   APP VERSION     DESCRIPTION
+shan-helm-repo/rest-poc-helm    0.1.0           0.0.1-SNAPSHOT  A Helm chart for Kubernetes
+
+D:\workarea\helm_ws\public-helm-charts\my-helm-charts>    
